@@ -11,8 +11,8 @@ cleanup:
 deploy:
 	aws lambda \
 		update-function-code \
-		--profile sample-transcoder \
+		--profile default \
 		--region ap-northeast-1 \
 		--function-name transcoder \
-		--zip-file fileb://./build/get-master-reports-from-s3.zip \
+		--zip-file fileb://./build/transcoder.zip \
 		--publish
