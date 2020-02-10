@@ -16,9 +16,7 @@ type S3 struct {
 func New() *S3 {
 	return &S3{
 		Session: session.Must(session.NewSession(&aws.Config{
-			S3ForcePathStyle: aws.Bool(true),
-			Region:           aws.String(os.Getenv("REGION")),
-			Endpoint:         aws.String(os.Getenv("S3_ENDPOINT")),
+			Region: aws.String(os.Getenv("REGION")),
 		})),
 	}
 }
